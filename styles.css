@@ -70,40 +70,82 @@ body {
     }
 }
 
-/* Hero Section */
-#hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 5rem 0;
+    padding: 100px 20px;
+    background-image: url('https://via.placeholder.com/1920x1080?text=Background+Image');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-#hero .btn {
-    background: #ff9800;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hero .btn {
+    padding: 10px 20px;
     border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#hero .btn:hover {
-    background: #e68900;
+.hero .btn-primary {
+    background-color: #FF9933; /* Saffron color */
+    color: #fff;
 }
 
-/* Section Styles */
-section {
-    padding: 3rem 0;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+.hero .btn-primary:hover {
+    background-color: #FFD700; /* Golden color */
     color: #333;
 }
 
-p {
-    text-align: center;
+.hero .btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #FF9933;
+}
+
+.hero .btn-secondary:hover {
+    background-color: #FF9933;
+    color: #fff;
 }
 
 /* Blog Section */
