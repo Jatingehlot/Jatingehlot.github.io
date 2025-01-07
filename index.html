@@ -4,102 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vediconcepts</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?education,books') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .hero .cta {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: orange;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: darkorange;
+        }
+
+        /* Events Section */
+        .events, .blogs, .inspiration {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .events h2, .blogs h2, .inspiration h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .event-card, .blog-card {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .event-card:hover, .blog-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 50px;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .problem-slide {
+            animation: slide-in 1s ease-in-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: orange;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div class="logo">
-            <img src="https://via.placeholder.com/40x40?text=Logo" alt="Logo"> VedicConcepts
-        </div>
-        <div class="menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#events">Events</a>
-            <a href="#blogs">Blogs</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 data-aos="fade-down">Welcome to Vediconcepts</h1>
-            <p data-aos="fade-up">
-                Vediconcepts is an educational research organization that promotes the ancient Indian Gurukul education system. 
-                But we need your help! If you’re willing to work for the betterment of Gurukuls, join our mailing list where we share 
-                information on projects we are working on.
-            </p>
-            <div class="hero-buttons" data-aos="zoom-in">
-                <a href="#join" class="btn btn-primary">Join Us</a>
-                <a href="#projects" class="btn btn-secondary">Let's Work Together</a>
+        <div>
+            <h1>Welcome to Vediconcepts</h1>
+            <p>Promoting the ancient Indian Gurukul system. Join us to make education better.</p>
+            <div class="cta">
+                <a href="#join" class="btn">Join Us</a>
+                <a href="#work" class="btn">Let's Work Together</a>
             </div>
         </div>
     </section>
 
     <!-- Events Section -->
-    <section class="events" id="events">
-        <h2 data-aos="fade-right">Upcoming Events</h2>
-        <div class="event-cards" data-aos="fade-left">
-            <div class="event-card">Event 1</div>
-            <div class="event-card">Event 2</div>
-            <div class="event-card">Event 3</div>
-            <div class="event-card">Event 4</div>
-        </div>
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-card">Event 1</div>
+        <div class="event-card">Event 2</div>
+        <div class="event-card">Event 3</div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="blogs" id="blogs">
-        <h2 data-aos="zoom-in">Our Blogs</h2>
-        <div class="blog-container">
-            <div class="blog-card">Blog 1</div>
-            <div class="blog-card">Blog 2</div>
-            <div class="blog-card">Blog 3</div>
-        </div>
+    <!-- Blogs Section -->
+    <section class="blogs">
+        <h2>Our Blogs</h2>
+        <div class="blog-card">Blog 1</div>
+        <div class="blog-card">Blog 2</div>
+        <div class="blog-card">Blog 3</div>
     </section>
 
-    <!-- Problems Section -->
-    <section class="problems">
+    <!-- Problem Section -->
+    <section class="problem">
         <h2>The Problem with Current Education</h2>
-        <div class="slides">
-            <div class="slide">Problem 1: Lack of focus on values</div>
-            <div class="slide">Problem 2: Overemphasis on rote learning</div>
-            <div class="slide">Problem 3: Missing holistic development</div>
+        <div class="problem-slide">
+            <p>Overemphasis on rote learning.</p>
+            <a href="#" class="btn">Learn More</a>
         </div>
-        <a href="#learnmore" class="btn btn-primary">Learn More</a>
     </section>
 
     <!-- Inspiration Section -->
     <section class="inspiration">
         <h2>Our Inspiration</h2>
-        <p>We draw inspiration from the timeless values of ancient Gurukul traditions and the vision of creating a better future for students.</p>
+        <p>Timeless values of ancient Gurukul traditions.</p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="social-icons">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </div>
-        <div class="sitemap">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#events">Events</a>
-            <a href="#blogs">Blogs</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <p>Follow Us:</p>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
         <p>&copy; 2025 Vediconcepts. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.navbar .menu');
-            menu.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
